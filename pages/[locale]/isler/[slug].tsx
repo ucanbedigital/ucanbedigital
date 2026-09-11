@@ -28,15 +28,16 @@ export default function WorkDetailPageTr({
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const locale = (params?.locale === 'en' ? 'en' : 'tr') as 'tr' | 'en';
-  const slug = params?.slug as string;
+  const rawSlug = params?.slug as string;
+  const slug = decodeURIComponent(rawSlug).toLowerCase();
   const db = getDb();
-  const item = db.works.find((x: any) => x.slug === slug);
+  const item: any = db.works.find((x: any) => x.slug?.toLowerCase() === slug);
 
   if (!item) {
     return { notFound: true };
   }
 
-  const itemData = item[locale]?.html ? item[locale] : item.tr;
+  const itemData: any = (item[locale]?.html ? item[locale] : (item.tr?.html ? item.tr : item.en)) || {};
 
   return {
     props: {
