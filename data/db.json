@@ -1,0 +1,595 @@
+{
+  "settings": {
+    "siteName": "U.CAN.BE Digital",
+    "phone": "+90 (216) 804 55 52",
+    "email": "info@ucanbedigital.com",
+    "address": {
+      "tr": "Caferağa Mah. Şifa Sokak No:19 Kadıköy/İstanbul",
+      "en": "Caferaga Mah. Sifa Sokak No:19 Kadikoy/Istanbul"
+    },
+    "socials": {
+      "facebook": "https://www.facebook.com/ucanbedigital",
+      "twitter": "https://x.com/ucanbedigital",
+      "linkedin": "https://www.linkedin.com/company/u-can-be-digital/",
+      "instagram": "https://www.instagram.com/ucanbedigital/"
+    },
+    "logoDark": "/assets/img/logo.png",
+    "logoLight": "/assets/img/logo.png",
+    "footerLogoBg": "/assets/img/home1/footer-logo-bg.png",
+    "tagline": {
+      "tr": "Whatever You Want!",
+      "en": "Whatever You Want!"
+    },
+    "footerText": {
+      "tr": "Markanız için yeterli strateji, etkileyici, şık tasarım, uygun iletişim yaklaşımı...",
+      "en": "Appropriate strategy for your brand, impressive, stylish design, suitable communication approach..."
+    }
+  },
+  "home": {
+    "hero": {
+      "title": {
+        "tr": "Dijital İş Ortağınızdan Daha Fazlasını Bekleyin",
+        "en": "Expect More From Your Digital Partner"
+      },
+      "description": {
+        "tr": "Hızlı Yanıt Süreleri: Markanızı her zaman rekabetin önünde tutun.\nYaratıcı Dijital Çözümler: Unutulmaz dijital deneyimler tasarlayın.\nMarka Değeri ve Gücü: Dijital varlığınızı güçlendirerek markanızı yükseltin.\nÜstün Kalite ve Farklılık: Dijital dünyada öne çıkın, sıradanlığın ötesine geçin.\nEğer bu tür bir dijital dönüşüm arıyorsanız, birlikte olağanüstü bir başarıya imza atalım",
+        "en": "Fast Response Times: Always keep your brand ahead of the competition.\nCreative Digital Solutions: Design unforgettable digital experiences.\nBrand Value and Power: Elevate your brand by strengthening your digital presence.\nSuperior Quality and Difference: Stand out in the digital world, go beyond the ordinary.\nIf you are looking for such a digital transformation, let's achieve extraordinary success together."
+      },
+      "image": "/assets/img/home1/banner-img-1.webp",
+      "buttonText": {
+        "tr": "İletişim",
+        "en": "Contact"
+      },
+      "buttonLink": {
+        "tr": "/tr/iletisim",
+        "en": "/en/contact"
+      }
+    },
+    "about": {
+      "badge": "U.CAN.BE Whatever You Want!",
+      "title": {
+        "tr": "2013'ten Beri Benzersiz Fikirler ve Yaratıcı İşler Sunmak İçin Çalışan Dijital Reklam Ajansıyız",
+        "en": "We are a Digital Advertising Agency Working Since 2013 to Deliver Unique Ideas and Creative Works"
+      },
+      "description": {
+        "tr": "U.CAN.BE olarak, markanızın dijital dünyada parlamasını sağlamak için buradayız. Dijital reklamcılık konusundaki uzmanlığımız ve yenilikçi yaklaşımımız ile hedef kitlenize ulaşmanızı, etkileşiminizi artırmanızı ve işletmenizi büyütmenizi sağlıyoruz. Kreatif stratejiler, veri odaklı kampanyalar ve ölçülebilir sonuçlar ile, dijital reklamcılığın gücünü maksimum düzeyde kullanarak markanızı bir sonraki seviyeye taşıyoruz. İster sosyal medya yönetimi, ister SEO, isterse PPC reklamları olsun; dijital dünyanın her alanında yanınızdayız.",
+        "en": "At U.CAN.BE, we are here to ensure your brand shines in the digital world. With our expertise and innovative approach in digital advertising, we help you reach your target audience, increase engagement, and grow your business. Through creative strategies, data-driven campaigns, and measurable results, we take your brand to the next level."
+      },
+      "stats": [
+        {
+          "number": "1,500+",
+          "label": {
+            "tr": "Proje",
+            "en": "Projects"
+          },
+          "sublabel": {
+            "tr": "Tamamladığımız Projeler",
+            "en": "Completed Projects"
+          }
+        },
+        {
+          "number": "90%",
+          "label": {
+            "tr": "Memnuniyet",
+            "en": "Satisfaction"
+          },
+          "sublabel": {
+            "tr": "Müşteri Memnuniyeti",
+            "en": "Customer Satisfaction"
+          }
+        },
+        {
+          "number": "10+",
+          "label": {
+            "tr": "Yıl",
+            "en": "Years"
+          },
+          "sublabel": {
+            "tr": "Sektör Tecrübesi",
+            "en": "Industry Experience"
+          }
+        }
+      ],
+      "features": [
+        {
+          "icon": "/assets/img/home1/icon/about-feature-card-icon1.svg",
+          "title": {
+            "tr": "Yenilikçi Çözümler",
+            "en": "Innovative Solutions"
+          },
+          "desc": {
+            "tr": "En yeni teknolojileri kullanarak işinize değer katıyoruz.",
+            "en": "Adding value to your business using the latest technologies."
+          }
+        },
+        {
+          "icon": "/assets/img/home1/icon/about-feature-card-icon2.svg",
+          "title": {
+            "tr": "Uzman Kadro",
+            "en": "Expert Team"
+          },
+          "desc": {
+            "tr": "Alanında uzman, dinamik ve tecrübeli ekip üyeleri.",
+            "en": "Experienced, dynamic, and expert team members."
+          }
+        },
+        {
+          "icon": "/assets/img/home1/icon/about-feature-card-icon3.svg",
+          "title": {
+            "tr": "Hızlı Teslimat",
+            "en": "Fast Delivery"
+          },
+          "desc": {
+            "tr": "Zamanında ve kaliteli proje yönetimi süreçleri.",
+            "en": "On-time and high-quality project management."
+          }
+        },
+        {
+          "icon": "/assets/img/home1/icon/about-feature-card-icon4.svg",
+          "title": {
+            "tr": "7/24 Destek",
+            "en": "24/7 Support"
+          },
+          "desc": {
+            "tr": "Proje sonrasında da kesintisiz destek ve danışmanlık.",
+            "en": "Continuous support and consultancy after delivery."
+          }
+        }
+      ]
+    }
+  },
+  "services": [
+    {
+      "id": "frontend-development",
+      "slug": {
+        "tr": "frontend-gelistirme",
+        "en": "frontend-development"
+      },
+      "title": {
+        "tr": "Frontend Geliştirme",
+        "en": "Frontend Development"
+      },
+      "shortDesc": {
+        "tr": "Kullanıcı dostu, hızlı ve modern arayüz geliştirme çözümleri.",
+        "en": "User-friendly, fast, and modern interface development solutions."
+      },
+      "content": {
+        "tr": "<p>En son web teknolojilerini (React, Next.js, Vue, TypeScript) kullanarak yüksek performanslı, mobil uyumlu ve modern web arayüzleri geliştiriyoruz. Kullanıcı deneyimini merkeze alarak işletmenizin dijital yüzünü kusursuz hale getiriyoruz.</p>",
+        "en": "<p>We build high-performance, mobile-responsive, and modern web interfaces using cutting-edge web technologies like React, Next.js, Vue, and TypeScript.</p>"
+      },
+      "icon": "bi-code-slash"
+    },
+    {
+      "id": "backend-development",
+      "slug": {
+        "tr": "backend-gelistirme",
+        "en": "backend-development"
+      },
+      "title": {
+        "tr": "Backend Geliştirme",
+        "en": "Backend Development"
+      },
+      "shortDesc": {
+        "tr": "Güvenli, ölçeklenebilir ve güçlü sunucu tarafı mimarileri.",
+        "en": "Secure, scalable, and robust server-side architectures."
+      },
+      "content": {
+        "tr": "<p>Güvenilir API'ler, mikroservisler ve veritabanı mimarileri ile projelerinize sağlam temeller atıyoruz. Güvenlik, hız ve kesintisiz çalışma standartlarımızla verilerinizi koruyoruz.</p>",
+        "en": "<p>We lay solid foundations for your projects with reliable APIs, microservices, and database architectures.</p>"
+      },
+      "icon": "bi-hdd-stack"
+    },
+    {
+      "id": "ui-ux-design",
+      "slug": {
+        "tr": "ui-ux-tasarim",
+        "en": "ui-ux-design"
+      },
+      "title": {
+        "tr": "UI / UX Tasarım",
+        "en": "UI / UX Design"
+      },
+      "shortDesc": {
+        "tr": "Kullanıcı odaklı, estetik ve dönüşüm artıran arayüz tasarımları.",
+        "en": "User-centric, aesthetic, and conversion-boosting UI designs."
+      },
+      "content": {
+        "tr": "<p>Kullanıcı araştırmaları, tel çerçeveler (wireframe) ve etkileşimli prototipler ile kullanıcılarınızın seveceği dijital deneyimler tasarlıyoruz.</p>",
+        "en": "<p>We craft digital experiences your users will love through user research, wireframes, and interactive prototypes.</p>"
+      },
+      "icon": "bi-palette"
+    },
+    {
+      "id": "brand-building",
+      "slug": {
+        "tr": "marka-olusturma",
+        "en": "brand-building"
+      },
+      "title": {
+        "tr": "Marka Oluşturma",
+        "en": "Brand Building"
+      },
+      "shortDesc": {
+        "tr": "Markanızın hikayesini ve kimliğini güçlü bir şekilde inşa ediyoruz.",
+        "en": "Crafting your brand story and identity with power and precision."
+      },
+      "content": {
+        "tr": "<p>Sektörde iz bırakan bir marka yaratmak için strateji, kimlik ve vizyonunuzu tek bir çizgide buluşturuyoruz.</p>",
+        "en": "<p>We bring strategy, identity, and vision together in a unified direction to build an unforgettable brand.</p>"
+      },
+      "icon": "bi-stars"
+    },
+    {
+      "id": "social-media-management",
+      "slug": {
+        "tr": "sosyal-medya-yonetimi",
+        "en": "social-media-management"
+      },
+      "title": {
+        "tr": "Sosyal Medya Yönetimi",
+        "en": "Social Media Management"
+      },
+      "shortDesc": {
+        "tr": "Topluluğunuzu büyüten ve etkileşimi artıran içerik stratejileri.",
+        "en": "Content strategies that grow your community and boost engagement."
+      },
+      "content": {
+        "tr": "<p>Instagram, LinkedIn, X, Facebook ve TikTok kanallarında markanızı doğru kitleyle buluşturuyor, yaratıcı içeriklerle etkileşimi zirveye taşıyoruz.</p>",
+        "en": "<p>We connect your brand with the right audience across all social platforms with creative storytelling and high engagement.</p>"
+      },
+      "icon": "bi-share"
+    },
+    {
+      "id": "seo-search-engine-optimization",
+      "slug": {
+        "tr": "seo-arama-motoru-optimizasyonu",
+        "en": "seo-search-engine-optimization"
+      },
+      "title": {
+        "tr": "SEO (Arama Motoru Optimizasyonu)",
+        "en": "SEO (Search Engine Optimization)"
+      },
+      "shortDesc": {
+        "tr": "Google aramalarında üst sıralara çıkaran teknik ve içerik SEO.",
+        "en": "Technical and content SEO that ranks you at the top of Google."
+      },
+      "content": {
+        "tr": "<p>Detaylı anahtar kelime analizleri, site içi optimizasyon ve kaliteli backlink stratejileriyle organik trafiğinizi ve satışlarınızı katlıyoruz.</p>",
+        "en": "<p>We multiply your organic traffic and sales with in-depth keyword analysis, on-site optimization, and quality backlink strategies.</p>"
+      },
+      "icon": "bi-graph-up-arrow"
+    },
+    {
+      "id": "corporate-identity-design",
+      "slug": {
+        "tr": "kurumsal-kimlik-tasarimi",
+        "en": "corporate-identity-design"
+      },
+      "title": {
+        "tr": "Kurumsal Kimlik Tasarımı",
+        "en": "Corporate Identity Design"
+      },
+      "shortDesc": {
+        "tr": "Logo, renk paleti, tipografi ve kurumsal basılı materyaller.",
+        "en": "Logo, color palette, typography, and corporate stationery."
+      },
+      "content": {
+        "tr": "<p>Markanızın profesyonelliğini her temas noktasında hissettiren bütünleşik kurumsal kimlik kılavuzları hazırlıyoruz.</p>",
+        "en": "<p>We design unified brand guidelines that communicate professionalism across every touchpoint.</p>"
+      },
+      "icon": "bi-brush"
+    },
+    {
+      "id": "strategy-and-concept-development",
+      "slug": {
+        "tr": "strateji-ve-konsept-gelistirme",
+        "en": "strategy-and-concept-development"
+      },
+      "title": {
+        "tr": "Strateji ve Konsept Geliştirme",
+        "en": "Strategy & Concept Development"
+      },
+      "shortDesc": {
+        "tr": "Hedefe tam odaklanan yenilikçi pazarlama ve kampanya kurguları.",
+        "en": "Goal-oriented innovative marketing and campaign frameworks."
+      },
+      "content": {
+        "tr": "<p>Pazar araştırmaları ve rakip analizleri doğrultusunda markanızı ayrıştıracak yaratıcı fikirler ve büyüme stratejileri üretiyoruz.</p>",
+        "en": "<p>We generate creative ideas and growth strategies that differentiate your brand through market and competitor analysis.</p>"
+      },
+      "icon": "bi-lightbulb"
+    },
+    {
+      "id": "print-designs",
+      "slug": {
+        "tr": "baski-tasarimlari",
+        "en": "print-designs"
+      },
+      "title": {
+        "tr": "Baskı Tasarımları",
+        "en": "Print Designs"
+      },
+      "shortDesc": {
+        "tr": "Katalog, broşür, ambalaj ve fuar standı tasarımları.",
+        "en": "Catalog, brochure, packaging, and exhibition stand designs."
+      },
+      "content": {
+        "tr": "<p>Yüksek baskı kalitesine uygun, göz alıcı ve akılda kalıcı basılı reklam materyalleri üretiyoruz.</p>",
+        "en": "<p>We create eye-catching and memorable printed materials optimized for the highest print quality.</p>"
+      },
+      "icon": "bi-printer"
+    },
+    {
+      "id": "website-development",
+      "slug": {
+        "tr": "web-sitesi-gelistirme",
+        "en": "website-development"
+      },
+      "title": {
+        "tr": "Web Sitesi Geliştirme",
+        "en": "Website Development"
+      },
+      "shortDesc": {
+        "tr": "Özel yazılım, kurumsal web siteleri ve e-ticaret çözümleri.",
+        "en": "Custom software, corporate websites, and e-commerce solutions."
+      },
+      "content": {
+        "tr": "<p>Hızlı, SEO uyumlu, mobil dostu ve kolay yönetilebilir kurumsal web siteleri geliştiriyoruz.</p>",
+        "en": "<p>We build ultra-fast, SEO-compliant, mobile-friendly, and easily manageable corporate websites.</p>"
+      },
+      "icon": "bi-laptop"
+    },
+    {
+      "id": "infographic-banner-video-design",
+      "slug": {
+        "tr": "i-nfografik-banner-ve-video-tasarimi",
+        "en": "infographic-banner-video-design"
+      },
+      "title": {
+        "tr": "İnfografik, Banner ve Video Tasarımı",
+        "en": "Infographic, Banner & Video Design"
+      },
+      "shortDesc": {
+        "tr": "Dinamik video kurguları, hareketli grafikler ve dijital reklam bannerları.",
+        "en": "Dynamic video editing, motion graphics, and digital display banners."
+      },
+      "content": {
+        "tr": "<p>Görsel iletişimin gücünü kullanarak mesajınızı en etkili ve hızlı şekilde hedef kitlenize aktarıyoruz.</p>",
+        "en": "<p>We communicate your message clearly and dynamically using the full power of visual and motion storytelling.</p>"
+      },
+      "icon": "bi-play-circle"
+    },
+    {
+      "id": "cm-reporting-monitoring",
+      "slug": {
+        "tr": "cm-raporlama-i-zleme",
+        "en": "cm-reporting-monitoring"
+      },
+      "title": {
+        "tr": "CM / Raporlama / İzleme",
+        "en": "CM / Reporting & Monitoring"
+      },
+      "shortDesc": {
+        "tr": "Veri analitiği, kampanya performans takibi ve düzenli raporlama.",
+        "en": "Data analytics, campaign performance tracking, and actionable reporting."
+      },
+      "content": {
+        "tr": "<p>Tüm dijital yatırımlarınızın geri dönüşünü (ROI) şeffaf bir şekilde ölçümlüyor, veriye dayalı optimizasyon önerileri sunuyoruz.</p>",
+        "en": "<p>We transparently measure the ROI of all your digital investments and deliver data-driven optimization strategies.</p>"
+      },
+      "icon": "bi-bar-chart-line"
+    }
+  ],
+  "works": [
+    {
+      "id": "carl-s-jr",
+      "slug": {
+        "tr": "carl-s-jr",
+        "en": "carl-s-jr"
+      },
+      "title": "Carl's Jr.",
+      "category": {
+        "tr": "Sosyal Medya & Dijital Tasarım",
+        "en": "Social Media & Digital Design"
+      },
+      "image": "https://cdn.ucanbedigital.com/storage/works/April2020/carlsjr1.jpg",
+      "client": "Carl's Jr. Turkey",
+      "year": "2023",
+      "description": {
+        "tr": "Carl's Jr. markasının Türkiye'deki dijital reklam, sosyal medya yönetimi ve kreatif kampanya süreçlerinin başarıyla yürütülmesi.",
+        "en": "Managing digital advertising, social media communications, and creative campaigns for Carl's Jr. in Turkey."
+      },
+      "content": {
+        "tr": "<p>Dünyaca ünlü fast-food zinciri Carl's Jr. için iştah kabartan görsel tasarımlar, eğlenceli video içerikler ve yüksek etkileşimli sosyal medya kampanyaları kurguladık.</p>",
+        "en": "<p>We produced mouth-watering visual designs, engaging video contents, and high-conversion social campaigns for global fast-food brand Carl's Jr.</p>"
+      }
+    },
+    {
+      "id": "namet",
+      "slug": {
+        "tr": "namet",
+        "en": "namet"
+      },
+      "title": "Namet",
+      "category": {
+        "tr": "Web Geliştirme & Tasarım",
+        "en": "Web Development & Design"
+      },
+      "image": "https://cdn.ucanbedigital.com/storage/works/April2020/namet1.jpg",
+      "client": "Namet Gıda",
+      "year": "2023",
+      "description": {
+        "tr": "Türkiye'nin lider et üreticisi Namet için kurumsal web sitesi ve dijital ürün kataloğu tasarımı.",
+        "en": "Corporate website and digital product catalog design for Turkey's leading meat brand Namet."
+      },
+      "content": {
+        "tr": "<p>Namet'in zengin ürün gamını en modern arayüzle sunan, mobil uyumlu ve yüksek performanslı kurumsal web sitesini tasarladık ve hayata geçirdik.</p>",
+        "en": "<p>We designed and launched a mobile-responsive, high-performance corporate website presenting Namet's rich product portfolio.</p>"
+      }
+    },
+    {
+      "id": "nova",
+      "slug": {
+        "tr": "nova",
+        "en": "nova"
+      },
+      "title": "Nova",
+      "category": {
+        "tr": "Kurumsal Kimlik & UI/UX",
+        "en": "Brand Identity & UI/UX"
+      },
+      "image": "https://cdn.ucanbedigital.com/storage/works/April2020/nova.jpg",
+      "client": "Nova Holding",
+      "year": "2022",
+      "description": {
+        "tr": "Nova markası için baştan sona kurumsal kimlik, dijital tasarım ve kullanıcı deneyimi kurgusu.",
+        "en": "End-to-end corporate identity, digital design, and UX architecture for Nova."
+      },
+      "content": {
+        "tr": "<p>Nova için çağdaş tasarım trendlerine uygun bir görsel kimlik sistemi oluşturduk ve web arayüzlerine entegre ettik.</p>",
+        "en": "<p>We established a modern visual identity system for Nova and seamlessly integrated it into their digital interfaces.</p>"
+      }
+    },
+    {
+      "id": "agir-global",
+      "slug": {
+        "tr": "agir-global",
+        "en": "agir-global"
+      },
+      "title": "Ağır Global",
+      "category": {
+        "tr": "Web Sitesi & SEO",
+        "en": "Website & SEO"
+      },
+      "image": "https://cdn.ucanbedigital.com/storage/works/April2020/agir-global1.jpg",
+      "client": "Ağır Global Lojistik",
+      "year": "2023",
+      "description": {
+        "tr": "Uluslararası lojistik çözümleri sunan Ağır Global için çok dilli web platformu ve global SEO stratejisi.",
+        "en": "Multilingual web platform and global SEO strategy for international logistics brand Ağır Global."
+      },
+      "content": {
+        "tr": "<p>Ağır Global'in uluslararası arenadaki gücünü yansıtan çok dilli, hızlı ve arama motorlarında üst sıralara çıkan kurumsal web sitesi geliştirdik.</p>",
+        "en": "<p>We built an international, multilingual website tailored for global logistics, optimizing it for top search engine visibility.</p>"
+      }
+    },
+    {
+      "id": "test-center",
+      "slug": {
+        "tr": "test-center",
+        "en": "test-center"
+      },
+      "title": "Test Center",
+      "category": {
+        "tr": "Özel Yazılım & Portal",
+        "en": "Custom Software & Portal"
+      },
+      "image": "https://cdn.ucanbedigital.com/storage/works/April2020/testcenter.jpg",
+      "client": "Test Center Medikal",
+      "year": "2023",
+      "description": {
+        "tr": "Online randevu ve sonuç takip sistemi içeren entegre sağlık portalı geliştirilmesi.",
+        "en": "Development of an integrated healthcare portal with online appointment and lab results tracking."
+      },
+      "content": {
+        "tr": "<p>Kullanıcıların kolayca randevu alabileceği ve test sonuçlarını güvenli şekilde görüntüleyebileceği hasta odaklı dijital portal.</p>",
+        "en": "<p>A patient-centric digital portal allowing users to book appointments easily and access lab results securely.</p>"
+      }
+    },
+    {
+      "id": "kocaeli-bilisim-fuari",
+      "slug": {
+        "tr": "kocaeli-bilisim-fuari",
+        "en": "kocaeli-informatics-fair"
+      },
+      "title": {
+        "tr": "Kocaeli Bilişim Fuarı",
+        "en": "Kocaeli Informatics Fair"
+      },
+      "category": {
+        "tr": "Etkinlik & Dijital İletişim",
+        "en": "Event & Digital Communication"
+      },
+      "image": "https://cdn.ucanbedigital.com/storage/works/April2020/kocaeli1.jpg",
+      "client": "Kocaeli Büyükşehir Belediyesi",
+      "year": "2022",
+      "description": {
+        "tr": "Bilişim Fuarı için dijital tanıtım kampanyası, katılımcı kayıt sistemi ve sosyal medya yönetimi.",
+        "en": "Digital promotion campaign, visitor registration system, and social media management for the Informatics Fair."
+      },
+      "content": {
+        "tr": "<p>Binlerce teknoloji meraklısını buluşturan fuarın tüm dijital iletişimini, biletleme altyapısını ve tanıtım videolarını hazırladık.</p>",
+        "en": "<p>We orchestrated digital communications, visitor registration, and promo videos for the premier tech fair.</p>"
+      }
+    }
+  ],
+  "blogs": [
+    {
+      "id": "chatgpt-4o",
+      "slug": {
+        "tr": "chatgpt-4o-nedir-nasil-kullanilir-yeni-ozellikler-nelerdir",
+        "en": "what-is-chatgpt-4o-how-to-use-and-features"
+      },
+      "title": {
+        "tr": "ChatGPT-4o Nedir? Nasıl Kullanılır? Yeni Özellikler Nelerdir?",
+        "en": "What is ChatGPT-4o? How to Use It? What Are the New Features?"
+      },
+      "excerpt": {
+        "tr": "OpenAI'nin en yeni modeli GPT-4o'nun getirdiği çok modlu yapay zeka devrimini ve iş dünyasına etkilerini inceliyoruz.",
+        "en": "Exploring OpenAI's newest multimodal GPT-4o model and its transformative impact on business."
+      },
+      "content": {
+        "tr": "<p>OpenAI tarafından duyurulan GPT-4o ('omni'), metin, ses ve görüntü verilerini gerçek zamanlı işleyebilen çığır açıcı bir modeldir. Bu yazımızda yeni modelin dijital pazarlama ve yazılım süreçlerine nasıl entegre edilebileceğini ele alıyoruz...</p>",
+        "en": "<p>OpenAI's newly announced GPT-4o ('omni') is a groundbreaking model capable of processing text, audio, and vision in real-time. In this article, we explore its integration into modern workflows...</p>"
+      },
+      "image": "https://cdn.ucanbedigital.com/storage/makalelers/May2024/chatgpt-thumb.webp",
+      "author": "U.CAN.BE Ekibi",
+      "date": "2024-05-20"
+    },
+    {
+      "id": "emerge-americas-2024",
+      "slug": {
+        "tr": "emerge-americas-2024-teknoloji-ve-girisimcilikte-yeni-bir-bakis-acisi",
+        "en": "emerge-americas-2024-new-perspective-on-tech"
+      },
+      "title": {
+        "tr": "eMerge Americas 2024: Teknoloji ve Girişimcilikte Yeni Bir Bakış Açısı",
+        "en": "eMerge Americas 2024: A Fresh Perspective on Tech & Entrepreneurship"
+      },
+      "excerpt": {
+        "tr": "Miami'de düzenlenen global teknoloji buluşmasından öne çıkan trendler, yatırım fırsatları ve dijital yenilikler.",
+        "en": "Key takeaways, investment trends, and digital breakthroughs from the global tech summit in Miami."
+      },
+      "content": {
+        "tr": "<p>Global teknoloji dünyasının nabzını tutan eMerge Americas 2024 etkinliğinde yapay zeka, sürdürülebilir teknolojiler ve fintech alanındaki en son yenilikler sahneye çıktı...</p>",
+        "en": "<p>At eMerge Americas 2024, cutting-edge AI breakthroughs, sustainable tech, and fintech trends took center stage...</p>"
+      },
+      "image": "https://cdn.ucanbedigital.com/storage/makalelers/April2024/emerge-thumb-thumb.jpg",
+      "author": "U.CAN.BE Ekibi",
+      "date": "2024-04-28"
+    },
+    {
+      "id": "topluluk-yonetimi",
+      "slug": {
+        "tr": "markanizi-guclendirmenin-sirri-ve-baglilik-olusturmanin-anahtari-topluluk-yonetimi",
+        "en": "community-management-key-to-brand-loyalty"
+      },
+      "title": {
+        "tr": "Markanızı Güçlendirmenin Sırrı: Topluluk Yönetimi",
+        "en": "The Secret to Brand Power: Community Management"
+      },
+      "excerpt": {
+        "tr": "Müşterilerinizi markanızın sadık savunucularına dönüştürmenin yolları ve modern topluluk yönetimi taktikleri.",
+        "en": "Tactics for transforming customers into loyal brand advocates through modern community management."
+      },
+      "content": {
+        "tr": "<p>Sosyal medyada sadece takipçi sayısını artırmak yetmiyor; etkileşimi canlı tutan, aidiyet hissi oluşturan güçlü bir topluluk inşa etmek markaların en büyük kozu haline geldi...</p>",
+        "en": "<p>Growing follower numbers is no longer enough; cultivating an active, loyal community has become the greatest asset for modern brands...</p>"
+      },
+      "image": "https://cdn.ucanbedigital.com/storage/makalelers/April2024/topluluk-yonetimi-thumb.jpg",
+      "author": "U.CAN.BE Ekibi",
+      "date": "2024-04-15"
+    }
+  ],
+  "messages": []
+}
