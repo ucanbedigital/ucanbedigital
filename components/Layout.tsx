@@ -3,6 +3,11 @@ import Head from 'next/head';
 import Header from './Header';
 import Footer from './Footer';
 import { SiteSettings } from '../lib/db';
+import Swiper from 'swiper';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 interface LayoutProps {
   meta?: {
@@ -25,7 +30,73 @@ export default function Layout({
   rawHtml
 }: LayoutProps) {
   useEffect(() => {
-    // Intercept contact forms inside rawHtml to handle submission via API
+    // 1. Rotate badge letters around the play button (DEVELOPMENT.DESIGN.SEO.)
+    const chars = document.querySelectorAll<HTMLElement>('.badge__char');
+    if (chars.length > 0) {
+      const angle = 360 / chars.length;
+      chars.forEach((c, i) => {
+        c.style.transform = `rotate(${i * angle}deg)`;
+        c.style.position = 'absolute';
+        c.style.left = '50%';
+        c.style.top = '0';
+        c.style.transformOrigin = '0 65px';
+      });
+    }
+
+    // 2. Initialize Swiper for Portfolio Slider
+    const portfolioEl = document.querySelector('.portfolio-slider') as HTMLElement;
+    let portfolioSwiper: Swiper | null = null;
+    if (portfolioEl) {
+      portfolioSwiper = new Swiper(portfolioEl, {
+        modules: [Autoplay, Pagination],
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        speed: 1000,
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.portfolio-slider .swiper-pagination',
+          clickable: true,
+        },
+        breakpoints: {
+          576: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1200: { slidesPerView: 3 },
+        },
+      });
+    }
+
+    // 3. Initialize Swiper for Process Slider (Operasyonel Planımız)
+    const processEl = document.querySelector('.process-slider') as HTMLElement;
+    let processSwiper: Swiper | null = null;
+    if (processEl) {
+      processSwiper = new Swiper(processEl, {
+        modules: [Navigation, Autoplay],
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        speed: 800,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          prevEl: '.process-slider-prev',
+          nextEl: '.process-slider-next',
+        },
+        breakpoints: {
+          576: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          992: { slidesPerView: 3 },
+          1200: { slidesPerView: 4 },
+        },
+      });
+    }
+
+    // 4. Intercept contact forms inside rawHtml to handle submission via API
     const forms = document.querySelectorAll('form');
     const handleSubmit = async (e: Event) => {
       e.preventDefault();
@@ -54,7 +125,10 @@ export default function Layout({
     };
 
     forms.forEach((form) => form.addEventListener('submit', handleSubmit));
+
     return () => {
+      if (portfolioSwiper) portfolioSwiper.destroy(true, true);
+      if (processSwiper) processSwiper.destroy(true, true);
       forms.forEach((form) => form.removeEventListener('submit', handleSubmit));
     };
   }, [rawHtml, locale]);
