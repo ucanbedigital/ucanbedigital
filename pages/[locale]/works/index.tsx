@@ -1,15 +1,26 @@
 import { GetServerSideProps } from 'next';
 import Layout from '../../../components/Layout';
-import { getDb, DatabaseSchema } from '../../../lib/db';
+import { getDb, SiteSettings } from '../../../lib/db';
 
-export default function WorksIndex({ db, locale }: { db: DatabaseSchema; locale: 'tr' | 'en' }) {
-  const pageKey = locale === 'tr' ? 'works_tr' : 'works_en';
-  const page = db.pages[pageKey];
+interface PageData {
+  html?: string;
+  meta?: {
+    title?: string;
+    description?: string;
+  };
+}
 
+interface PageProps {
+  settings: SiteSettings;
+  page: PageData | null;
+  locale: 'tr' | 'en';
+}
+
+export default function WorksIndexEn({ settings, page, locale }: PageProps) {
   return (
     <Layout
       meta={page?.meta}
-      settings={db.site}
+      settings={settings}
       locale={locale}
       isInner={true}
       rawHtml={page?.html}
@@ -20,9 +31,13 @@ export default function WorksIndex({ db, locale }: { db: DatabaseSchema; locale:
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const locale = (params?.locale === 'en' ? 'en' : 'tr') as 'tr' | 'en';
   const db = getDb();
+  const pageKey = 'works_' + locale;
+  const page = db.pages[pageKey] || null;
+
   return {
     props: {
-      db,
+      settings: db.site,
+      page,
       locale,
     },
   };

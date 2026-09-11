@@ -149,9 +149,9 @@ export default function Layout({
       <Header settings={settings} locale={locale} isInner={isInner} />
 
       {rawHtml ? (
-        <main dangerouslySetInnerHTML={{ __html: rawHtml }} />
+        <main suppressHydrationWarning dangerouslySetInnerHTML={{ __html: rawHtml }} />
       ) : (
-        <main>{children}</main>
+        <main suppressHydrationWarning>{children}</main>
       )}
 
       <Footer settings={settings} locale={locale} />

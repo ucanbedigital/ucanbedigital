@@ -1,22 +1,24 @@
 import { GetServerSideProps } from 'next';
 import Layout from '../../../components/Layout';
-import { getDb, DatabaseSchema } from '../../../lib/db';
+import { getDb, SiteSettings } from '../../../lib/db';
 
-export default function BlogDetailPage({
-  db,
-  locale,
-  blogHtml,
-  meta,
-}: {
-  db: DatabaseSchema;
+interface DetailProps {
+  settings: SiteSettings;
   locale: 'tr' | 'en';
   blogHtml?: string;
   meta?: any;
-}) {
+}
+
+export default function BlogDetailPage({
+  settings,
+  locale,
+  blogHtml,
+  meta,
+}: DetailProps) {
   return (
     <Layout
       meta={meta}
-      settings={db.site}
+      settings={settings}
       locale={locale}
       isInner={true}
       rawHtml={blogHtml}
@@ -28,20 +30,20 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const locale = (params?.locale === 'en' ? 'en' : 'tr') as 'tr' | 'en';
   const slug = params?.slug as string;
   const db = getDb();
-  const blog = db.blogs.find((b) => b.slug === slug);
+  const item = db.blogs.find((x: any) => x.slug === slug);
 
-  if (!blog) {
+  if (!item) {
     return { notFound: true };
   }
 
-  const blogData = blog[locale]?.html ? blog[locale] : blog.tr;
+  const itemData = item[locale]?.html ? item[locale] : item.tr;
 
   return {
     props: {
-      db,
+      settings: db.site,
       locale,
-      blogHtml: blogData?.html || '',
-      meta: blogData?.meta || null,
+      blogHtml: itemData?.html || '',
+      meta: itemData?.meta || null,
     },
   };
 };

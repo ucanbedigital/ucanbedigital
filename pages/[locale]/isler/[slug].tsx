@@ -1,22 +1,24 @@
 import { GetServerSideProps } from 'next';
 import Layout from '../../../components/Layout';
-import { getDb, DatabaseSchema } from '../../../lib/db';
+import { getDb, SiteSettings } from '../../../lib/db';
 
-export default function WorkDetailPage({
-  db,
-  locale,
-  workHtml,
-  meta,
-}: {
-  db: DatabaseSchema;
+interface DetailProps {
+  settings: SiteSettings;
   locale: 'tr' | 'en';
   workHtml?: string;
   meta?: any;
-}) {
+}
+
+export default function WorkDetailPageTr({
+  settings,
+  locale,
+  workHtml,
+  meta,
+}: DetailProps) {
   return (
     <Layout
       meta={meta}
-      settings={db.site}
+      settings={settings}
       locale={locale}
       isInner={true}
       rawHtml={workHtml}
@@ -28,20 +30,20 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const locale = (params?.locale === 'en' ? 'en' : 'tr') as 'tr' | 'en';
   const slug = params?.slug as string;
   const db = getDb();
-  const work = db.works.find((w) => w.slug === slug);
+  const item = db.works.find((x: any) => x.slug === slug);
 
-  if (!work) {
+  if (!item) {
     return { notFound: true };
   }
 
-  const workData = work[locale]?.html ? work[locale] : work.tr;
+  const itemData = item[locale]?.html ? item[locale] : item.tr;
 
   return {
     props: {
-      db,
+      settings: db.site,
       locale,
-      workHtml: workData?.html || '',
-      meta: workData?.meta || null,
+      workHtml: itemData?.html || '',
+      meta: itemData?.meta || null,
     },
   };
 };

@@ -1,22 +1,24 @@
 import { GetServerSideProps } from 'next';
 import Layout from '../../../components/Layout';
-import { getDb, DatabaseSchema } from '../../../lib/db';
+import { getDb, SiteSettings } from '../../../lib/db';
 
-export default function ServiceDetailPage({
-  db,
-  locale,
-  serviceHtml,
-  meta,
-}: {
-  db: DatabaseSchema;
+interface DetailProps {
+  settings: SiteSettings;
   locale: 'tr' | 'en';
   serviceHtml?: string;
   meta?: any;
-}) {
+}
+
+export default function ServiceDetailPageEn({
+  settings,
+  locale,
+  serviceHtml,
+  meta,
+}: DetailProps) {
   return (
     <Layout
       meta={meta}
-      settings={db.site}
+      settings={settings}
       locale={locale}
       isInner={true}
       rawHtml={serviceHtml}
@@ -28,20 +30,20 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const locale = (params?.locale === 'en' ? 'en' : 'tr') as 'tr' | 'en';
   const slug = params?.slug as string;
   const db = getDb();
-  const service = db.services.find((s) => s.slug === slug);
+  const item = db.services.find((x: any) => x.slug === slug);
 
-  if (!service) {
+  if (!item) {
     return { notFound: true };
   }
 
-  const serviceData = service[locale]?.html ? service[locale] : service.tr;
+  const itemData = item[locale]?.html ? item[locale] : item.tr;
 
   return {
     props: {
-      db,
+      settings: db.site,
       locale,
-      serviceHtml: serviceData?.html || '',
-      meta: serviceData?.meta || null,
+      serviceHtml: itemData?.html || '',
+      meta: itemData?.meta || null,
     },
   };
 };
