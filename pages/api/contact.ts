@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { getDb, saveDb, ContactMessage } from '../../lib/db';
+import { getDb, saveDb } from '../../lib/db';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
@@ -9,25 +9,22 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
     const { name, email, phone, subject, message } = req.body;
 
-    if (!name || !email || !message) {
-      return res.status(400).json({ message: 'Missing required fields' });
-    }
-
     const db = getDb();
-    const newMessage: ContactMessage = {
+    const newMessage = {
       id: Date.now().toString(),
-      name,
-      email,
+      name: name || 'Anonim',
+      email: email || '',
       phone: phone || '',
       subject: subject || 'Genel İletişim',
-      message,
-      date: new Date().toISOString().replace('T', ' ').substring(0, 19)
+      message: message || '',
+      date: new Date().toLocaleString('tr-TR', { timeZone: 'Europe/Istanbul' }),
     };
 
-    db.messages = [newMessage, ...(db.messages || [])];
+    if (!db.inbox) db.inbox = [];
+    db.inbox.unshift(newMessage);
     saveDb(db);
 
-    return res.status(200).json({ success: true, message: 'Message saved successfully' });
+    return res.status(200).json({ success: true, message: 'Mesajınız başarıyla iletildi.' });
   } catch (err: any) {
     return res.status(500).json({ message: err.message });
   }

@@ -1,15 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
-import { SiteSettings, ServiceItem } from '../lib/db';
+import { SiteSettings } from '../lib/db';
 
 interface FooterProps {
   settings: SiteSettings;
-  services: ServiceItem[];
   locale: 'tr' | 'en';
 }
 
-export default function Footer({ settings, services, locale }: FooterProps) {
+export default function Footer({ settings, locale }: FooterProps) {
   const isTr = locale === 'tr';
+  const phoneHref = (settings?.phone || '+90 (216) 804 55 52').replace(/\s+/g, '');
 
   return (
     <footer className="footer-section">
@@ -68,10 +68,14 @@ export default function Footer({ settings, services, locale }: FooterProps) {
                       </g>
                     </svg>
                   </span>
-                  <h3>{settings.tagline[locale]}</h3>
+                  <h3>{isTr ? 'Dijitalde Fark Yaratın' : 'Make a Difference in Digital'}</h3>
                 </div>
                 <div className="content">
-                  <p>{settings.footerText[locale]}</p>
+                  <p>
+                    {isTr
+                      ? 'Markanızın dijital dünyadaki tüm ihtiyaçlarına profesyonel çözümler sunuyoruz.'
+                      : 'We provide professional solutions for all your brand\'s digital needs.'}
+                  </p>
                 </div>
               </div>
             </div>
@@ -90,7 +94,7 @@ export default function Footer({ settings, services, locale }: FooterProps) {
             </div>
             <div className="content">
               <span>{isTr ? 'Bize Ulaşın' : 'Call Us'}</span>
-              <h6><a href={`tel:${settings.phone.replace(/\s+/g, '')}`}>{settings.phone}</a></h6>
+              <h6><a href={`tel:${phoneHref}`}>{settings?.phone || '+90 (216) 804 55 52'}</a></h6>
             </div>
           </div>
 
@@ -104,7 +108,7 @@ export default function Footer({ settings, services, locale }: FooterProps) {
             </div>
             <div className="content">
               <span>{isTr ? 'Adres' : 'Address'}</span>
-              <h6><Link href={isTr ? '/tr/iletisim' : '/en/contact'}>{settings.address[locale]}</Link></h6>
+              <h6><Link href={isTr ? '/tr/iletisim' : '/en/contact'}>{settings?.address?.[locale] || 'Caferağa Mah. Şifa Sokak No:19 Kadıköy/İstanbul'}</Link></h6>
             </div>
           </div>
 
@@ -118,7 +122,7 @@ export default function Footer({ settings, services, locale }: FooterProps) {
             </div>
             <div className="content">
               <span>Say Hello</span>
-              <h6><a href={`mailto:${settings.email}`}>{settings.email}</a></h6>
+              <h6><a href={`mailto:${settings?.email || 'info@ucanbedigital.com'}`}>{settings?.email || 'info@ucanbedigital.com'}</a></h6>
             </div>
           </div>
         </div>

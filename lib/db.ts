@@ -4,88 +4,42 @@ import path from 'path';
 const DB_PATH = path.join(process.cwd(), 'data', 'db.json');
 const TMP_DB_PATH = path.join('/tmp', 'ucanbe_db.json');
 
-export interface LocalizedString {
-  tr: string;
-  en: string;
+export interface SiteMeta {
+  title: string;
+  description: string;
+}
+
+export interface PageContent {
+  slug?: string;
+  html: string;
+  meta: SiteMeta;
+}
+
+export interface LocalizedItem {
+  slug: string;
+  tr: PageContent;
+  en: PageContent;
 }
 
 export interface SiteSettings {
-  siteName: string;
   phone: string;
   email: string;
-  address: LocalizedString;
-  socials: {
-    facebook: string;
-    twitter: string;
-    linkedin: string;
-    instagram: string;
+  address: {
+    tr: string;
+    en: string;
   };
-  logoDark: string;
-  logoLight: string;
-  footerLogoBg: string;
-  tagline: LocalizedString;
-  footerText: LocalizedString;
-}
-
-export interface StatItem {
-  number: string;
-  label: LocalizedString;
-  sublabel: LocalizedString;
-}
-
-export interface FeatureItem {
-  icon: string;
-  title: LocalizedString;
-  desc: LocalizedString;
-}
-
-export interface HomeData {
-  hero: {
-    title: LocalizedString;
-    description: LocalizedString;
-    image: string;
-    buttonText: LocalizedString;
-    buttonLink: LocalizedString;
+  facebook: string;
+  twitter: string;
+  linkedin: string;
+  instagram: string;
+  tagline?: {
+    tr: string;
+    en: string;
   };
-  about: {
-    badge: string;
-    title: LocalizedString;
-    description: LocalizedString;
-    stats: StatItem[];
-    features: FeatureItem[];
+  footerText?: {
+    tr: string;
+    en: string;
   };
-}
-
-export interface ServiceItem {
-  id: string;
-  slug: LocalizedString;
-  title: LocalizedString;
-  shortDesc: LocalizedString;
-  content: LocalizedString;
-  icon: string;
-}
-
-export interface WorkItem {
-  id: string;
-  slug: LocalizedString;
-  title: string | LocalizedString;
-  category: LocalizedString;
-  image: string;
-  client: string;
-  year: string;
-  description: LocalizedString;
-  content: LocalizedString;
-}
-
-export interface BlogItem {
-  id: string;
-  slug: LocalizedString;
-  title: LocalizedString;
-  excerpt: LocalizedString;
-  content: LocalizedString;
-  image: string;
-  author: string;
-  date: string;
 }
 
 export interface ContactMessage {
@@ -99,22 +53,21 @@ export interface ContactMessage {
 }
 
 export interface DatabaseSchema {
-  settings: SiteSettings;
-  home: HomeData;
-  services: ServiceItem[];
-  works: WorkItem[];
-  blogs: BlogItem[];
-  messages: ContactMessage[];
+  site: SiteSettings;
+  works: LocalizedItem[];
+  services: LocalizedItem[];
+  blogs: LocalizedItem[];
+  pages: Record<string, PageContent>;
+  inbox: ContactMessage[];
 }
 
 export function getDb(): DatabaseSchema {
-  // Check tmp override first (for Vercel serverless runtime mutations)
   if (fs.existsSync(TMP_DB_PATH)) {
     try {
       const data = fs.readFileSync(TMP_DB_PATH, 'utf-8');
       return JSON.parse(data);
     } catch (e) {
-      // Fallback
+      // fallback
     }
   }
 
@@ -123,17 +76,34 @@ export function getDb(): DatabaseSchema {
     return JSON.parse(data);
   }
 
-  throw new Error('Database file does not exist. Run init_db.py first.');
+  return {
+    site: {
+      phone: '+90 (216) 804 55 52',
+      email: 'info@ucanbedigital.com',
+      address: {
+        tr: 'Caferağa Mah. Şifa Sokak No:19 Kadıköy/İstanbul',
+        en: 'Caferağa Mah. Şifa Sokak No:19 Kadıköy/İstanbul'
+      },
+      facebook: 'https://www.facebook.com/ucanbedigital',
+      twitter: 'https://x.com/ucanbedigital',
+      linkedin: 'https://www.linkedin.com/company/u-can-be-digital/',
+      instagram: 'https://www.instagram.com/ucanbedigital/'
+    },
+    works: [],
+    services: [],
+    blogs: [],
+    pages: {},
+    inbox: []
+  };
 }
 
 export function saveDb(data: DatabaseSchema): void {
   const jsonStr = JSON.stringify(data, null, 2);
 
-  // Try local first
   try {
     fs.writeFileSync(DB_PATH, jsonStr, 'utf-8');
   } catch (err) {
-    // In Vercel serverless environment, local filesystem is read-only, write to /tmp
+    // In Vercel serverless environment, local filesystem is read-only
   }
 
   try {

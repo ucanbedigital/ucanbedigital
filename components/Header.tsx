@@ -6,9 +6,10 @@ import { SiteSettings } from '../lib/db';
 interface HeaderProps {
   settings: SiteSettings;
   locale: 'tr' | 'en';
+  isInner?: boolean;
 }
 
-export default function Header({ settings, locale }: HeaderProps) {
+export default function Header({ settings, locale, isInner = false }: HeaderProps) {
   const router = useRouter();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -44,6 +45,8 @@ export default function Header({ settings, locale }: HeaderProps) {
     }
     router.push(newPath);
   };
+
+  const phoneHref = (settings?.phone || '+90 (216) 804 55 52').replace(/\s+/g, '');
 
   return (
     <>
@@ -137,7 +140,7 @@ export default function Header({ settings, locale }: HeaderProps) {
                       </div>
                       <div className="contact">
                         <span>{isTr ? 'Telefon' : 'Phone'}</span>
-                        <h6><a href={`tel:${settings.phone.replace(/\s+/g, '')}`}>{settings.phone}</a></h6>
+                        <h6><a href={`tel:${phoneHref}`}>{settings?.phone || '+90 (216) 804 55 52'}</a></h6>
                       </div>
                     </li>
                     <li className="single-contact">
@@ -148,7 +151,7 @@ export default function Header({ settings, locale }: HeaderProps) {
                       </div>
                       <div className="contact">
                         <span>{isTr ? 'E-Posta' : 'Email'}</span>
-                        <h6><a href={`mailto:${settings.email}`}>{settings.email}</a></h6>
+                        <h6><a href={`mailto:${settings?.email || 'info@ucanbedigital.com'}`}>{settings?.email || 'info@ucanbedigital.com'}</a></h6>
                       </div>
                     </li>
                     <li className="single-contact">
@@ -158,7 +161,7 @@ export default function Header({ settings, locale }: HeaderProps) {
                         </svg>
                       </div>
                       <div className="contact">
-                        <h6>{settings.address[locale]}</h6>
+                        <h6>{settings?.address?.[locale] || 'Caferağa Mah. Şifa Sokak No:19 Kadıköy/İstanbul'}</h6>
                       </div>
                     </li>
                   </ul>
@@ -172,10 +175,10 @@ export default function Header({ settings, locale }: HeaderProps) {
                     </svg>
                   </h6>
                   <ul className="social-area">
-                    <li><a href={settings.socials.facebook} target="_blank" rel="noreferrer"><i className="bi bi-facebook"></i> Facebook</a></li>
-                    <li><a href={settings.socials.twitter} target="_blank" rel="noreferrer"><i className="bi bi-twitter-x"></i> Twitter</a></li>
-                    <li><a href={settings.socials.linkedin} target="_blank" rel="noreferrer"><i className="bi bi-linkedin"></i> Linkedin</a></li>
-                    <li><a href={settings.socials.instagram} target="_blank" rel="noreferrer"><i className="bi bi-instagram"></i> Instagram</a></li>
+                    <li><a href={settings?.facebook || 'https://www.facebook.com/ucanbedigital'} target="_blank" rel="noreferrer"><i className="bi bi-facebook"></i> Facebook</a></li>
+                    <li><a href={settings?.twitter || 'https://x.com/ucanbedigital'} target="_blank" rel="noreferrer"><i className="bi bi-twitter-x"></i> Twitter</a></li>
+                    <li><a href={settings?.linkedin || 'https://www.linkedin.com/company/u-can-be-digital/'} target="_blank" rel="noreferrer"><i className="bi bi-linkedin"></i> Linkedin</a></li>
+                    <li><a href={settings?.instagram || 'https://www.instagram.com/ucanbedigital/'} target="_blank" rel="noreferrer"><i className="bi bi-instagram"></i> Instagram</a></li>
                   </ul>
                 </div>
               </div>
@@ -185,7 +188,7 @@ export default function Header({ settings, locale }: HeaderProps) {
       </div>
 
       {/* Main Header Area */}
-      <header className="header-area style-1 ">
+      <header className={`header-area style-1 ${isInner ? 'bg-white' : ''}`}>
         <div className="container d-flex flex-nowrap align-items-center justify-content-between">
           <div className="company-logo">
             <Link className="logo-dark" href={`/${locale}`}>
@@ -232,7 +235,7 @@ export default function Header({ settings, locale }: HeaderProps) {
                 <button
                   type="button"
                   onClick={() => switchLocale(isTr ? 'en' : 'tr')}
-                  className="btn btn-link text-white text-decoration-none fw-bold p-0 ms-2"
+                  className={`btn btn-link ${isInner ? 'text-dark' : 'text-white'} text-decoration-none fw-bold p-0 ms-2`}
                   style={{ fontSize: '15px' }}
                 >
                   {isTr ? 'EN' : 'TR'}
@@ -251,14 +254,14 @@ export default function Header({ settings, locale }: HeaderProps) {
                 </div>
                 <div className="content">
                   <span>{isTr ? 'Sorularınız İçin' : 'Have Questions?'}</span>
-                  <h6><a href={`tel:${settings.phone.replace(/\s+/g, '')}`}>{settings.phone}</a></h6>
+                  <h6><a href={`tel:${phoneHref}`}>{settings?.phone || '+90 (216) 804 55 52'}</a></h6>
                 </div>
               </div>
 
               <div className="sidebar-btn" style={{ cursor: 'pointer' }} onClick={() => setSidebarOpen(true)}>
                 <svg className="open" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
                   <g>
-                    <path d="M6.79688 9.375H2.57812C1.15652 9.375 0 8.21848 0 6.79688V2.57812C0 1.15652 1.15652 0 2.57812 0H6.79688C8.21848 0 9.375 1.15652 9.375 2.57812V6.79688C9.375 8.21848 8.21848 9.375 6.79688 9.375ZM17.4219 9.375H13.2031C11.7815 9.375 10.625 8.21848 10.625 6.79688V2.57812C10.625 1.15652 11.7815 0 13.2031 0H17.4219C18.8435 0 20 1.15652 20 2.57812V6.79688C20 8.21848 18.8435 9.375 17.4219 9.375ZM15.3125 20C12.7278 20 10.625 17.8972 10.625 15.3125C10.625 12.7278 12.7278 10.625 15.3125 10.625C17.8972 10.625 20 12.7278 20 15.3125C20 17.8972 17.8972 20 15.3125 20ZM6.79688 20H2.57812C1.15652 20 0 18.8435 0 17.4219V13.2031C0 11.7815 1.15652 10.625 2.57812 10.625H6.79688C8.21848 10.625 9.375 11.7815 9.375 13.2031V17.4219C9.375 18.8435 8.21848 20 6.79688 20Z" fill="currentColor"></path>
+                    <path d="M6.79688 9.375H2.57812C1.15652 9.375 0 8.21848 0 6.79688V2.57812C0 1.15652 1.15652 0 2.57812 0H6.79688C8.21848 0 9.375 1.15652 9.375 2.57812V6.79688C9.375 8.21848 8.21848 9.375 6.79688 9.375ZM2.57812 1.25C1.84578 1.25 1.25 1.84578 1.25 2.57812V6.79688C1.25 7.52922 1.84578 8.125 2.57812 8.125H6.79688C7.52922 8.125 8.125 7.52922 8.125 6.79688V2.57812C8.125 1.84578 7.52922 1.25 6.79688 1.25H2.57812ZM17.4219 9.375H13.2031C11.7815 9.375 10.625 8.21848 10.625 6.79688V2.57812C10.625 1.15652 11.7815 0 13.2031 0H17.4219C18.8435 0 20 1.15652 20 2.57812V6.79688C20 8.21848 18.8435 9.375 17.4219 9.375ZM13.2031 1.25C12.4708 1.25 11.875 1.84578 11.875 2.57812V6.79688C11.875 7.52922 12.4708 8.125 13.2031 8.125H17.4219C18.1542 8.125 18.75 7.52922 18.75 6.79688V2.57812C18.75 1.84578 18.1542 1.25 17.4219 1.25H13.2031ZM15.3125 20C12.7278 20 10.625 17.8972 10.625 15.3125C10.625 12.7278 12.7278 10.625 15.3125 10.625C17.8972 10.625 20 12.7278 20 15.3125C20 17.8972 17.8972 20 15.3125 20ZM15.3125 11.875C13.4171 11.875 11.875 13.4171 11.875 15.3125C11.875 17.2079 13.4171 18.75 15.3125 18.75C17.2079 18.75 18.75 17.2079 18.75 15.3125C18.75 13.4171 17.2079 11.875 15.3125 11.875ZM6.79688 20H2.57812C1.15652 20 0 18.8435 0 17.4219V13.2031C0 11.7815 1.15652 10.625 2.57812 10.625H6.79688C8.21848 10.625 9.375 11.7815 9.375 13.2031V17.4219C9.375 18.8435 8.21848 20 6.79688 20ZM2.57812 11.875C1.84578 11.875 1.25 12.4708 1.25 13.2031V17.4219C1.25 18.1542 1.84578 18.75 2.57812 18.75H6.79688C7.52922 18.75 8.125 18.1542 8.125 17.4219V13.2031C8.125 12.4708 7.52922 11.875 6.79688 11.875H2.57812Z" fill="currentColor"></path>
                   </g>
                 </svg>
               </div>
@@ -270,10 +273,10 @@ export default function Header({ settings, locale }: HeaderProps) {
       {/* Fixed Right Social */}
       <div className="fixed-right-social position-fixed end-0 top-50 translate-middle-y z-2">
         <ul className="social-area">
-          <li><a href={settings.socials.facebook} className="facebook" target="_blank" rel="noreferrer"><i className="bi bi-facebook"></i></a></li>
-          <li><a href={settings.socials.twitter} className="twitter" target="_blank" rel="noreferrer"><i className="bi bi-twitter-x"></i></a></li>
-          <li><a href={settings.socials.linkedin} className="linkedin" target="_blank" rel="noreferrer"><i className="bi bi-linkedin"></i></a></li>
-          <li><a href={settings.socials.instagram} className="instagram" target="_blank" rel="noreferrer"><i className="bi bi-instagram"></i></a></li>
+          <li><a href={settings?.facebook || 'https://www.facebook.com/ucanbedigital'} className="facebook" target="_blank" rel="noreferrer"><i className="bi bi-facebook"></i></a></li>
+          <li><a href={settings?.twitter || 'https://x.com/ucanbedigital'} className="twitter" target="_blank" rel="noreferrer"><i className="bi bi-twitter-x"></i></a></li>
+          <li><a href={settings?.linkedin || 'https://www.linkedin.com/company/u-can-be-digital/'} className="linkedin" target="_blank" rel="noreferrer"><i className="bi bi-linkedin"></i></a></li>
+          <li><a href={settings?.instagram || 'https://www.instagram.com/ucanbedigital/'} className="instagram" target="_blank" rel="noreferrer"><i className="bi bi-instagram"></i></a></li>
         </ul>
       </div>
     </>

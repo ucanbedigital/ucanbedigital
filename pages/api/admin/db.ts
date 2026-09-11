@@ -8,7 +8,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       return res.status(200).json(db);
     } else if (req.method === 'POST') {
       const updatedData: DatabaseSchema = req.body;
-      if (!updatedData.settings || !updatedData.home) {
+      if (!updatedData.site || !updatedData.pages) {
         return res.status(400).json({ message: 'Invalid database payload' });
       }
       saveDb(updatedData);
