@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Header from './Header';
 import Footer from './Footer';
@@ -29,7 +29,20 @@ export default function Layout({
   children,
   rawHtml
 }: LayoutProps) {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const videoId = locale === 'en' ? 'OqmkVkmqsN4' : 'wrj4CcKRQFg';
+
   useEffect(() => {
+    // 0. Handle video modal click on homepage hero play button
+    const handlePlayClick = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement)?.closest('.play-icon.video1, .video-area .play');
+      if (target) {
+        e.preventDefault();
+        setIsVideoOpen(true);
+      }
+    };
+    document.addEventListener('click', handlePlayClick);
+
     // 1. Rotate badge letters around the play button (DEVELOPMENT.DESIGN.SEO.)
     const chars = document.querySelectorAll<HTMLElement>('.badge__char');
     if (chars.length > 0) {
@@ -127,11 +140,29 @@ export default function Layout({
     forms.forEach((form) => form.addEventListener('submit', handleSubmit));
 
     return () => {
+      document.removeEventListener('click', handlePlayClick);
       if (portfolioSwiper) portfolioSwiper.destroy(true, true);
       if (processSwiper) processSwiper.destroy(true, true);
       forms.forEach((form) => form.removeEventListener('submit', handleSubmit));
     };
   }, [rawHtml, locale]);
+
+  useEffect(() => {
+    if (!isVideoOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsVideoOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [isVideoOpen]);
 
   return (
     <>
@@ -155,6 +186,43 @@ export default function Layout({
       )}
 
       <Footer settings={settings} locale={locale} />
+
+      {isVideoOpen && (
+        <div
+          className="modal-video"
+          tabIndex={-1}
+          role="dialog"
+          aria-label="Video Modal"
+          onClick={() => setIsVideoOpen(false)}
+        >
+          <div className="modal-video-body">
+            <div
+              className="modal-video-inner"
+              style={{ cursor: 'auto' }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="modal-video-movie-wrap">
+                <button
+                  type="button"
+                  className="modal-video-close-btn"
+                  aria-label="Close"
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => setIsVideoOpen(false)}
+                />
+                <iframe
+                  width="460"
+                  height="230"
+                  src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  tabIndex={-1}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
