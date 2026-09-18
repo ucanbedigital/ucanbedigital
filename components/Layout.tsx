@@ -62,9 +62,9 @@ export default function Layout({
           clickable: true,
         },
         breakpoints: {
-          576: { slidesPerView: 1 },
-          768: { slidesPerView: 2 },
-          1200: { slidesPerView: 3 },
+          576: { slidesPerView: 1, slidesPerGroup: 1 },
+          768: { slidesPerView: 2, slidesPerGroup: 2 },
+          1200: { slidesPerView: 3, slidesPerGroup: 3 },
         },
       });
     }
