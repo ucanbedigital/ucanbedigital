@@ -131,7 +131,7 @@ export default function Footer({ settings, locale }: FooterProps) {
         {/* Footer Bottom */}
         <div className="footer-bottom text-center flex-column">
           <div className="copyright-area">
-            <p>Copyright 2024 <strong>U.CAN.BE</strong> All Rights Reserved.</p>
+            <p>Copyright 2026 <strong>U.CAN.BE</strong> All Rights Reserved.</p>
           </div>
         </div>
       </div>
