@@ -58,7 +58,7 @@ export default function Layout({
           disableOnInteraction: false,
         },
         pagination: {
-          el: '.portfolio-slider .swiper-pagination',
+          el: '.portfolio-section .swiper-pagination, .pagination1',
           clickable: true,
         },
         breakpoints: {
