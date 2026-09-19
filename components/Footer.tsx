@@ -109,7 +109,13 @@ export default function Footer({ settings, locale }: FooterProps) {
             </div>
             <div className="content">
               <span>{isTr ? 'Adres' : 'Address'}</span>
-              <h6><Link href={isTr ? '/tr/iletisim' : '/en/contact'}>{settings?.address?.[locale] || 'Kadıköy/İstanbul'}</Link></h6>
+              <h6>
+                <Link href={isTr ? '/tr/iletisim' : '/en/contact'}>
+                  {typeof settings?.address === 'object' && settings?.address
+                    ? settings.address[locale] || (isTr ? 'Kadıköy/İstanbul' : 'Newark DE, U.S.A')
+                    : (isTr ? 'Kadıköy/İstanbul' : 'Newark DE, U.S.A')}
+                </Link>
+              </h6>
             </div>
           </div>
 
