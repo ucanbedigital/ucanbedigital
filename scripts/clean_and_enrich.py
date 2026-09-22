@@ -50,25 +50,25 @@ for b in db["blogs"]:
 
 # Client logos for marquee_text2
 client_logos = [
-    {"name": "Banvit", "img": "https://cdn.ucanbedigital.com/storage/works/April2020/banvit1.jpg"},
-    {"name": "OYAK Yatırım", "img": "https://cdn.ucanbedigital.com/storage/works/August2022/thumb-oyakyatirim.jpg"},
-    {"name": "Ziraat Katılım", "img": "https://cdn.ucanbedigital.com/storage/works/May2020/ziraat.jpg"},
-    {"name": "Netaş", "img": "https://cdn.ucanbedigital.com/storage/works/April2020/netas.jpg"},
-    {"name": "Vestel", "img": "https://cdn.ucanbedigital.com/storage/works/April2020/vestel1.jpg"},
-    {"name": "Toshiba", "img": "https://cdn.ucanbedigital.com/storage/works/April2020/toshiba1.jpg"},
-    {"name": "Türksat", "img": "https://cdn.ucanbedigital.com/storage/works/April2020/turksat1.jpg"},
-    {"name": "Kale Kilit", "img": "https://cdn.ucanbedigital.com/storage/works/December2020/kale-kilit.jpg"},
-    {"name": "Çelebi", "img": "https://cdn.ucanbedigital.com/storage/works/April2020/celebi.jpg"},
-    {"name": "Nestle", "img": "https://cdn.ucanbedigital.com/storage/works/April2020/nestle1.jpg"},
-    {"name": "Subor", "img": "https://cdn.ucanbedigital.com/storage/works/November2023/subor-thumbnail.jpg"},
-    {"name": "Yapı Merkezi", "img": "https://cdn.ucanbedigital.com/storage/works/August2022/Web Görseller-14.jpg"},
-    {"name": "Dinçer Lojistik", "img": "https://cdn.ucanbedigital.com/storage/works/April2023/dincer-lojistik-thumbnail.jpg"},
-    {"name": "Reina Boats", "img": "https://cdn.ucanbedigital.com/storage/works/August2022/thumb-reina.jpg"},
-    {"name": "Kadir Has", "img": "https://cdn.ucanbedigital.com/storage/works/April2020/kadir-has.jpg"},
-    {"name": "Birleşik Ödeme", "img": "https://cdn.ucanbedigital.com/storage/works/March2022/thumbnail1.jpg"},
-    {"name": "Namet", "img": "https://cdn.ucanbedigital.com/storage/works/April2020/namet1.jpg"},
-    {"name": "Carls Jr", "img": "https://cdn.ucanbedigital.com/storage/works/April2020/carlsjr1.jpg"},
-    {"name": "Kuveyt Türk", "img": "https://cdn.ucanbedigital.com/storage/works/December2020/kuveytturk1.jpg"}
+    {"name": "Banvit", "img": "/storage/works/April2020/banvit1.jpg"},
+    {"name": "OYAK Yatırım", "img": "/storage/works/August2022/thumb-oyakyatirim.jpg"},
+    {"name": "Ziraat Katılım", "img": "/storage/works/May2020/ziraat.jpg"},
+    {"name": "Netaş", "img": "/storage/works/April2020/netas.jpg"},
+    {"name": "Vestel", "img": "/storage/works/April2020/vestel1.jpg"},
+    {"name": "Toshiba", "img": "/storage/works/April2020/toshiba1.jpg"},
+    {"name": "Türksat", "img": "/storage/works/April2020/turksat1.jpg"},
+    {"name": "Kale Kilit", "img": "/storage/works/December2020/kale-kilit.jpg"},
+    {"name": "Çelebi", "img": "/storage/works/April2020/celebi.jpg"},
+    {"name": "Nestle", "img": "/storage/works/April2020/nestle1.jpg"},
+    {"name": "Subor", "img": "/storage/works/November2023/subor-thumbnail.jpg"},
+    {"name": "Yapı Merkezi", "img": "/storage/works/August2022/Web Görseller-14.jpg"},
+    {"name": "Dinçer Lojistik", "img": "/storage/works/April2023/dincer-lojistik-thumbnail.jpg"},
+    {"name": "Reina Boats", "img": "/storage/works/August2022/thumb-reina.jpg"},
+    {"name": "Kadir Has", "img": "/storage/works/April2020/kadir-has.jpg"},
+    {"name": "Birleşik Ödeme", "img": "/storage/works/March2022/thumbnail1.jpg"},
+    {"name": "Namet", "img": "/storage/works/April2020/namet1.jpg"},
+    {"name": "Carls Jr", "img": "/storage/works/April2020/carlsjr1.jpg"},
+    {"name": "Kuveyt Türk", "img": "/storage/works/December2020/kuveytturk1.jpg"}
 ]
 
 items = []
