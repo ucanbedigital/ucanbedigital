@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import Script from 'next/script';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -13,6 +14,10 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <link rel="stylesheet" href="/assets/css/eaecb328b62e6e17.css" />
         <link rel="stylesheet" href="/assets/css/cd955130e6f8b262.css" />
       </Head>
+      <Script
+        src="https://widget.oorly.com/widget.js?c=8867e711"
+        strategy="afterInteractive"
+      />
       <Component {...pageProps} />
     </>
   );
